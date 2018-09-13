@@ -1,0 +1,114 @@
+<html>
+<head>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Jared Dunbar - Fall 2018</title>
+</head>
+<body>
+  <div>
+    <h1>Jared Dunbar</h1>
+    <h1>mp451 and mp452</h1>
+    <p>
+      COSI for Credit - 2 credits of mp451 and 1 credit of mp452
+    </p>
+    <h2>COSI Stuff</h2>
+    <p>
+      Kept the lab clean, participated in all meetings that I could get to (exception being I can't miss exams).
+    </p>
+      <!-- not yet -->
+      <!-- Worked Open House, etc. Cleaned the room, taught potential students about the university, general aid to new potential students. -->
+
+    <!--  Forum topics: new fiber optics, HVAC system replacement, keeping the ITL a workspace, ... -->
+    <!--  Project Updates: VoIP, COT (COSI IoT project, the "cosi of things") -->
+    <!--  Announcements: opening the ITL door without harming it -->
+    <p>
+      Gave x lightning talks:
+    </p>
+    <ul>
+      <li>
+        VoIP System - Graham and I showed off the VoIP server that we set up (Asterisk) and set up two Grandstream 1625's
+      </li>
+    </ul>
+    <p>
+      ... and some aftermeeting slots ...
+    </p>
+    <ul>
+      <li>
+        Showing of <a target="_blank" href="http://thewebsiteisdown.com">The Website is Down</a>
+      </li>
+      <li>
+        The great <a target="_blank" href="http://docs.cslabs.clarkson.edu/mediawiki/images/a/a8/State_of_the_network_aug_29_2018.jpeg">map</a>ping the entire CS Labs network (including COSI, Server Room, ITL, and 2nd floor network maps!)
+      </li>
+      <li>
+        Deploying Ubuntu 18.04 and Windows 10 with Clonezilla to the ITL. Bandwidth! Data! Fun! <!-- achieved 2.8Gb/s from Bacon with new network setup -->
+      </li>
+    </ul>
+    <!--
+    <p>
+      Gave a small group of 3 workshops titled "How it do?" - we covered:
+    </p>
+    -->
+
+    <h2>Server Stuff</h2>
+
+    <h3>Vlan Stuff</h3>
+    <p>
+      Added a few new vlans for different purposes (some out of necessity). Some of these were made previously but not branched from the switches.
+    </p>
+    <p>
+      Most of these vlans are untagged on exit, but some hardware have directly tagged packets (for example, the sc334a VM hosts)
+    </p>
+    <ul>
+      <li>
+        default: vlan 1, public 144/23 traffic (to be moved)
+      </li>
+      <li>
+        v2_cosi_priv: vlan 2, private 144/23 COSI traffic (firewalled from Ziltoid)
+      </li>
+      <li>
+        v3_cosi_pub: vlan 3, public 144/23 traffic (to be moved here)
+      </li>
+      <li>
+        v4_cosi_146: vlan 4, public 146/24 traffic (security network, has seperate broadcast domain)
+      </li>
+      <li>
+        v5_cosi_voip: vlan 5, private airgaped 10.1.1.1/24 network for VoIP devices within COSI. Has DHCP on particular range.
+      </li>
+    </ul>
+    <p>
+      This list will probably be extended with more vlans for hackathons on the ITL, probably in the 11-14 range.
+    </p>
+    </ul>
+    <h3>Virtual Machines</h3>
+    <p>
+      Reinstalled Grand-Dad with Ubuntu 18.04 instead of Debian 9, for reasons relating to containers. Also, set up a new netplan config for the vlan tagging.
+    </p>
+    <h3>Disaster Recovery</h3>
+    <p>
+      Handled powering down of non-critical services and migrations of critical services when server room cooling broke in early September.
+    </p>
+    <h2>ITL Stuff</h2>
+    <h3>ITL Builds</h3>
+    <p>
+      Worked on the Windows 10 and Ubuntu 18.04 installs. Updated the operating system from the Spring 2016 image to a new image, with new software. Gathered software from OIT and installed a lot of free software as well.
+    </p>
+    <p>
+      Ironicly, OIT was shipping Blender before us, despite us being the FOSS source for campus, and running the only Blender mirror for the Western Hemisphere...
+    </p>
+    <h3>ITL ethernet cabling</h3>
+    <p>
+      Rewired the entire ITL patch panel cabling, testing all cables to the wall, and redoing the entire color scheme of the ITL. Removed the remnants of the COSI Airgap network (with the intent that the new network is now the "airgap" network). Thanks for help from Thomas J.,<!-- cabling, testing --> Isaac,<!-- cabling, free food! --> and Graham.<!-- architecture, cabling, testing -->
+    </p>
+    <p>
+      The objective of the network was to be able to do the following:
+    </p>
+    <ol>
+      <li>
+        Be able to completely, easily, and flawlessly completely seperate the ITL network from the rest of the campus and COSI network. This means that a virus lab will be contained within the ITL network
+      </li>
+      <li>
+        Be able to put the entire ITL into 2-3 "partitions", so that we can put half of the ITL on one physical network, and one half of the ITL on a different part of the network, so that we can do hackathons such as capture the flag with separate physical networks.
+      </li>
+  </div>
+</body>
+</html>
