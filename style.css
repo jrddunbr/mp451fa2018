@@ -31,8 +31,12 @@ a, a.visited {
     text-decoration: none;
 }
 
-
 p {
+    margin-left: 80px;
+    margin-right: 20%;
+}
+
+pre {
     margin-left: 80px;
     margin-right: 20%;
 }
