@@ -2,7 +2,7 @@
 <head>
   <meta name=viewport content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Jared Dunbar - Fall 2018</title>
+  <title>Jared Dunbar - Fall 2018 - Midterm Edition!</title>
 </head>
 <body>
   <div>
@@ -13,20 +13,23 @@
     </p>
     <h2>COSI Stuff</h2>
     <p>
-      Kept the lab clean, participated in all meetings that I could get to (exception being I can't miss exams).
+      Kept the lab clean, participated in all meetings (even when I was out of the country!). Worked Open House, etc. Cleaned the room, taught potential students about the university, general aid to new potential students. Helped clean up Cold Storage.
     </p>
-      <!-- not yet -->
-      <!-- Worked Open House, etc. Cleaned the room, taught potential students about the university, general aid to new potential students. -->
-
     <!--  Forum topics: new fiber optics, HVAC system replacement, keeping the ITL a workspace, ... -->
     <!--  Project Updates: VoIP, COT (COSI IoT project, the "cosi of things") -->
-    <!--  Announcements: opening the ITL door without harming it -->
+    <!--  Announcements: opening the ITL door without harming it, & Hike -->
     <p>
-      Gave x lightning talks:
+      Gave 3 lightning talks:
     </p>
     <ul>
       <li>
         VoIP System - Graham and I showed off the VoIP server that we set up (Asterisk) and set up two Grandstream 1625's
+      </li>
+      <li>
+        NANOG74 - Talked about trip to Vancouver, BC, Canada for NANOG 74. Was good. Photos, etc.
+      </li>
+      <li>
+        COSI Speed Record - Talked about the COSI network. New speeds attained. Not nearly as fast as previously, but still attained 6Gb/s to nearby locatons, 2.5Gb/s to California, etc.
       </li>
     </ul>
     <p>
@@ -51,7 +54,19 @@
 
     <h2>Server Stuff</h2>
 
-    <h3>Vlan Stuff</h3>
+    <h3>Network Stuff</h3>
+
+    <p>
+      <b>Got an IPv6 /48 for the labs!</b>
+    </p>
+
+    <pre>2605:6480:c051::/48</pre>
+
+    <p>
+      Hosted "The Great IPv6 Subnetting Committee" meeting after aquiring IPv6 for the labs. Spent two days working on deploying IPv6 properly.
+    </p>
+
+    <h3>vlan Stuff</h3>
     <p>
       Added a few new vlans for different purposes (some out of necessity). Some of these were made previously but not branched from the switches.
     </p>
@@ -81,12 +96,12 @@
     </ul>
     <h3>Virtual Machines</h3>
     <p>
-      Reinstalled Grand-Dad with Ubuntu 18.04 instead of Debian 9, for reasons relating to containers. Also, set up a new netplan config for the vlan tagging.
+      Reinstalled Grand-Dad and Hydra with Ubuntu 18.04 instead of Debian 9, for reasons relating to better container support, live libvirtd migrations, and better networking support. We also set up a new netplan config for the vlan tagging with consistent bridge names for vlan tags to make the network more modular for migrations. We can now migrate VM's across hosts live without needing to change bridge interface names or have any lost packets.
     </p>
     <h3>Disaster Recovery</h3>
     <p>
-      Handled powering down of non-critical services and migrations of critical services when server room cooling broke in early September.
-    </p>
+      Handled powering down of non-critical services and migrations of critical services when server room cooling broke in early September. Still not fixed by mid-October.
+    </p>containers and networking.
     <h2>ITL Stuff</h2>
     <h3>ITL Builds</h3>
     <p>
