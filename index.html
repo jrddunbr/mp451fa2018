@@ -2,7 +2,7 @@
 <head>
   <meta name=viewport content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Jared Dunbar - Fall 2018 - Midterm Edition!</title>
+  <title>Jared Dunbar - Fall 2018</title>
 </head>
 <body>
   <div>
@@ -13,11 +13,11 @@
     </p>
     <h2>COSI Stuff</h2>
     <p>
-      Kept the lab clean, participated in all meetings (even when I was out of the country!). Worked Open House, etc. Cleaned the room, taught potential students about the university, general aid to new potential students. Helped clean up Cold Storage.
+      Kept the lab clean, participated in all meetings (even when I was out of the country!). Set up for Open House, etc. Cleaned the room, taught potential students about the university, general aid to new potential students. Helped clean up Cold Storage. <!-- I didn't attend open house because I couldn't find good reasons to advertise coming here -->
     </p>
-    <!--  Forum topics: new fiber optics, HVAC system replacement, keeping the ITL a workspace, ... -->
+    <!--  Forum topics: new fiber optics, HVAC system replacement, keeping the ITL a workspace, mirror drives, UPS batteries, COLOCATION, etc. -->
     <!--  Project Updates: VoIP, COT (COSI IoT project, the "cosi of things"), dev.cslabs.clarkson.edu -->
-    <!--  Announcements: opening the ITL door without harming it, & Hike -->
+    <!--  Announcements: opening the ITL door without harming it, & Hike (attempted) -->
     <p>
       Gave 3 lightning talks:
     </p>
@@ -30,6 +30,9 @@
       </li>
       <li>
         COSI Speed Record - Talked about the COSI network. New speeds attained. Not nearly as fast as previously, but still attained 6Gb/s to nearby locatons, 2.5Gb/s to California, etc.
+      </li>
+      <li>
+        <a href="http://browniepoints.cslabs.clarkson.edu">browniepoints.cslabs</a> - a website to track brownie goodness
       </li>
     </ul>
     <p>
@@ -87,14 +90,17 @@
       <li>
         v5_cosi_voip: vlan 5, private airgaped 10.1.1.1/24 network for VoIP devices within COSI. Has DHCP on particular range.
       </li>
+      <li>
+        v6_cosi_iot: vlan 6, private NAT'd (to 146 network) network for IoT stuff. Has DHCP on particular range.
+      </li>
     </ul>
     <p>
-      This list will probably be extended with more vlans for hackathons on the ITL, probably in the 11-14 range.
+      There are also a bunch of vlans used for the security network.
     </p>
     </ul>
     <h3>Virtual Machines</h3>
     <p>
-      Reinstalled Grand-Dad and Hydra with Ubuntu 18.04 instead of Debian 9, for reasons relating to better container support, live libvirtd migrations, and better networking support. We also set up a new netplan config for the vlan tagging with consistent bridge names for vlan tags to make the network more modular for migrations. We can now migrate VM's across hosts live without needing to change bridge interface names or have any lost packets.
+      Reinstalled Grand-Dad and Hydra with Ubuntu 18.04 instead of Debian 9, for reasons relating to better container support, live libvirtd migrations, and incredibly improved networking subsystems. We also set up a new netplan config for the vlan tagging with consistent bridge names for vlan tags to make the network more modular for migrations. We can now migrate VM's across hosts live without needing to change bridge interface names or have any lost packets.
     </p>
     <h3>Disaster Recovery</h3>
     <p>
@@ -122,6 +128,7 @@
       <li>
         Be able to put the entire ITL into 2-3 "partitions", so that we can put half of the ITL on one physical network, and one half of the ITL on a different part of the network, so that we can do hackathons such as capture the flag with separate physical networks.
       </li>
+    </ol>
   </div>
 </body>
 </html>
